@@ -60,7 +60,7 @@ class Player {
   calculateRank(arr) {
     let position = arr.slice().sort((a, b) => a.score - b.score).reverse().map(player => player.id).indexOf(this.id) + 1;
     if(position > 0) {
-      return "Rank " + position + " / " + arr.length;
+      return "Rank: " + position + " / " + arr.length;
     } else {
       return "Player not in array?????";
     }

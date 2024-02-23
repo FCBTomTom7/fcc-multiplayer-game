@@ -12,7 +12,7 @@ const runner = require('./test-runner.js');
 const app = express();
 const http = require('http').createServer(app);
 const io = require('socket.io')(http);
-app.use(helmet());
+
   // contentSecurityPolicy: false, 
   // xXssProtection: false
   // contentSecurityPolicy: {
@@ -32,10 +32,16 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 //For FCC testing purposes and enables user to connect from outside the hosting platform
 app.use(cors({origin: '*'})); 
-
+app.use(helmet({
+  hidePoweredBy: {
+    setTo: 'PHP 7.4.3'
+  }
+}));
+app.use(helmet.noCache());
 // Index page (static HTML)
 app.route('/')
   .get(function (req, res) {
+    res.setHeader("X-Powered-By", "PHP 7.4.3");
     res.sendFile(process.cwd() + '/views/index.html');
   }); 
 
