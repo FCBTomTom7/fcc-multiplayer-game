@@ -8,6 +8,9 @@ code {
 
 canvas {
   margin: auto;
+  border: 1px solid black;
+  /* border-top: none; */
+  background: #323526;
 }
 
 .container {
@@ -15,8 +18,47 @@ canvas {
   flex-direction: column;
 }
 
-@media (min-width: 800px) {
+#ui-bar {
+  width: 640px;
+  height: 100px;
+  background: #727566;
+  margin: 0 auto;
+  border: 1px solid black;
+  border-bottom: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+#controls, #game-title, #rank {
+  font-size: 2rem;
+  color: #ddeedd;
+  /* font-weight: bold; */
+}
+
+#game-title {
+  font-size: 3rem;
+}
+
+.micro-5-regular {
+  font-family: "Micro 5", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+#restart-message {
+  color: #ddeedd;
+  font-size: 2.7rem;
+  position: fixed;
+  left: calc(50% - 300px);
+  top: calc(50% - 90px);
+  visibility: hidden;
+}
+
+/* @media (min-width: 800px) {
   .container {
     flex-direction: row;
   }
-}
+} */

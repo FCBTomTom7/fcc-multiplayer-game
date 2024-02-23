@@ -1,6 +1,11 @@
 class Collectible {
-  constructor({x, y, value, id}) {
-
+  constructor({x, y, value, id}, color="beige") {
+    this.x = x;
+    this.y = y;
+    this.value = value;
+    this.id = id;
+    this.radius = 10;
+    this.color = color;
   }
 
 }

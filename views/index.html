@@ -10,7 +10,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="../public/style.css" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Micro+5&display=swap" rel="stylesheet">
     <script src="/socket.io/socket.io.js"></script>
   </head>
   <body>
@@ -19,6 +21,11 @@
     </header>
     <hr style="margin: 25px" />
     <div class="container">
+      <div id="ui-bar">
+        <p id="controls" class="micro-5-regular">Controls: WASD</p>
+        <p id="game-title" class="micro-5-regular">Coin Race</p>
+        <p id="rank" class="micro-5-regular">ome5</p>
+      </div>
       <canvas 
         ref="game"
         id="game-window" 
@@ -26,6 +33,7 @@
         height="480"
       >
       </canvas>
+      <h1 id="restart-message"></h1>
     </div>
   </body>
   <script src="../public/game.mjs" type="module"></script>
